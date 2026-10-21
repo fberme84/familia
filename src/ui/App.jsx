@@ -16,7 +16,7 @@ function App() {
   const [selected, setSelected] = useState(atNoon(new Date(2026, 9, 21)))
   const [anchor, setAnchor] = useState(atNoon(new Date(2026, 9, 21)))
   const [view, setView] = useState('week')
-  const [activePeople, setActivePeople] = useState(family.map(p => p.id))
+  const [selectedPerson, setSelectedPerson] = useState('all')
   const [frameMode, setFrameMode] = useState(false)
   const [clock, setClock] = useState(new Date())
   const [photo, setPhoto] = useState(0)
@@ -29,10 +29,11 @@ function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  const visibleEvents = useMemo(() => events.filter(e => activePeople.includes(e.person)), [activePeople])
+  const filterPeople = family.filter(person => person.id !== 'family')
+  const visibleEvents = useMemo(() => selectedPerson === 'all' ? events : events.filter(event => event.person === selectedPerson), [selectedPerson])
   const selectedEvents = visibleEvents.filter(e => e.date.slice(0, 10) === isoDay(selected)).sort((a, b) => a.date.localeCompare(b.date))
   const lunch = lunchMenu.meals.find(m => m.day === selected.getDate() && selected.getMonth() === 9)
-  const nextEvent = [...visibleEvents].filter(e => new Date(e.date) >= clock).sort((a, b) => a.date.localeCompare(b.date))[0]
+  const nextEvent = [...events].filter(e => new Date(e.date) >= clock).sort((a, b) => a.date.localeCompare(b.date))[0]
 
   const move = amount => {
     const next = new Date(anchor)
@@ -51,7 +52,6 @@ function App() {
     setSelected(atNoon(chosen))
   }
   const goToday = () => { const d = atNoon(new Date()); setSelected(d); setAnchor(d) }
-  const togglePerson = id => setActivePeople(current => current.includes(id) ? current.filter(x => x !== id) : [...current, id])
   const eventsOn = date => visibleEvents.filter(e => e.date.slice(0, 10) === isoDay(date))
 
   const gridDays = useMemo(() => {
@@ -79,12 +79,12 @@ function App() {
       <div className="content-grid">
         <section className="calendar-card card">
           <div className="calendar-heading"><div><div className="section-kicker">CALENDARIO FAMILIAR</div><h2>{period}</h2></div><div className="calendar-controls"><div className="segmented"><button className={view === 'week' ? 'active' : ''} onClick={() => setView('week')}>Semana</button><button className={view === 'month' ? 'active' : ''} onClick={() => setView('month')}>Mes</button></div><div className="nav-arrows"><button aria-label="Periodo anterior" onClick={() => move(-1)}><Icon name="chevron" size={17} className="flip"/></button><button aria-label="Periodo siguiente" onClick={() => move(1)}><Icon name="chevron" size={17}/></button></div></div></div>
+          <div className="who-filter" aria-label="Filtrar calendario por persona"><span className="who-filter-label">QUIÉN</span><div className="who-filter-options">{[{ id: 'all', name: 'Todos' }, ...filterPeople].map(person => { const isAll = person.id === 'all'; return <button key={person.id} type="button" className={`who-chip ${selectedPerson === person.id ? 'active' : ''} ${isAll ? 'all' : ''}`} style={!isAll ? { '--member-color': person.color, '--member-soft': person.soft } : undefined} aria-pressed={selectedPerson === person.id} onClick={() => setSelectedPerson(person.id)}>{!isAll && <i className="who-chip-dot" />}{person.name}</button> })}</div></div>
           <div className={`calendar-grid ${view}`}><div className="weekday-row">{WEEKDAYS.map(day => <span key={day}>{day}</span>)}</div><div className="days-grid">{gridDays.map(day => { const dayEvents = eventsOn(day); const isCurrent = day.getMonth() === anchor.getMonth(); const isToday = isoDay(day) === isoDay(new Date()); const isSelected = isoDay(day) === isoDay(selected); return <button key={isoDay(day)} className={`day-cell ${isCurrent ? '' : 'outside'} ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}`} onClick={() => setSelected(atNoon(day))} aria-label={`${fullDate(day)}${dayEvents.length ? `, ${dayEvents.length} eventos` : ''}`}><span className="day-number">{day.getDate()}</span><span className="day-dots">{dayEvents.slice(0, 4).map((e, i) => <i key={e.id} style={{ background: family.find(p => p.id === e.person)?.color }} className={view === 'month' ? 'month-dot' : ''}/>)}</span>{view === 'week' && dayEvents.slice(0, 2).map(e => <span className="day-event" key={e.id}><i style={{ background: family.find(p => p.id === e.person)?.color }}/>{e.title}</span>)}</button> })}</div></div>
           <div className="calendar-footer"><span><Icon name="spark" size={15}/> Una semana para compartir</span><span>{visibleEvents.length} planes en agenda</span></div>
         </section>
 
         <aside className="side-column">
-          <section className="family-card card"><div className="card-title-row"><div><div className="section-kicker">QUIÉN</div><h3>Nuestra familia</h3></div><span className="member-count">{activePeople.length}/{family.length}</span></div><div className="people-list">{family.map(p => <button key={p.id} className={`person-row ${activePeople.includes(p.id) ? '' : 'muted'}`} onClick={() => togglePerson(p.id)}><span className="person-avatar" style={{ color: p.color, background: p.soft }}>{p.initials}</span><span className="person-meta"><b>{p.name}</b><small>{p.role}</small></span><span className={`check ${activePeople.includes(p.id) ? 'checked' : ''}`}>{activePeople.includes(p.id) ? '✓' : ''}</span></button>)}</div></section>
           <section className="lunch-card card"><div className="lunch-top"><span className="lunch-icon">✳</span><span className="section-kicker">MENÚ DE MUESTRA · {new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short' }).format(selected).toUpperCase()}</span></div><h3>Menú del comedor</h3><p className="fiction-label">Menú ficticio de ejemplo</p>{lunch ? <><div className="meal-list"><div><span>PRIMERO</span><b>{lunch.first}</b></div><div><span>SEGUNDO</span><b>{lunch.main}</b></div><div><span>ACOMPAÑA</span><b>{lunch.side}</b></div><div><span>POSTRE</span><b>{lunch.dessert}</b></div></div><div className="allergy-note">♡ <span>Consulta siempre los alérgenos en el centro.</span></div></> : <div className="no-menu"><span>🍃</span><p>No hay menú disponible para este día.</p><small>El menú de ejemplo es de lunes a viernes.</small></div>}</section>
         </aside>
       </div>
