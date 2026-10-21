@@ -1,6 +1,6 @@
 # Nuestra Familia
 
-Panel familiar de demostración creado con React y Vite. Incluye calendario semanal y mensual, filtros por miembro, agenda diaria, menú escolar ficticio y modo marco de fotos. No conecta servicios externos ni guarda datos.
+Panel familiar de demostración creado con React y Vite. Incluye calendario semanal y mensual, filtros por miembro, agenda diaria, menú escolar ficticio y modo marco de fotos. La integración opcional de Google Calendar mantiene los tokens solo en memoria.
 
 ## Requisitos
 
@@ -33,3 +33,7 @@ El proyecto está preparado para el repositorio `familia` con la ruta base `/fam
 ## Datos de demostración
 
 Los eventos, integrantes y menús están en `src/data/family.js`, separados de los componentes visuales. Todos los datos son ficticios. No añadas información familiar personal a este repositorio público.
+
+## Integración de Google Calendar
+
+Consulta [GOOGLE-CALENDAR.md](GOOGLE-CALENDAR.md) para configurar OAuth, probar en local y pasar el ID público al build de GitHub Pages.
