@@ -109,8 +109,11 @@ function mapGoogleEvent(item, calendar, personId) {
     date: startsAt,
     title: item.summary || 'Evento sin título',
     person: personId,
-    category: calendar.summary || 'Google Calendar',
-    place: item.location || 'Google Calendar',
+    category: item.eventType && item.eventType !== 'default' ? item.eventType : '',
+    calendarName: calendar.summary || '',
+    place: item.location || '',
+    description: item.description || '',
+    endDateTime: item.end?.dateTime ? localDateTime(item.end.dateTime) : '',
     duration: eventDuration(item.start.dateTime || item.start.date, endsAt, allDay),
     allDay,
   }

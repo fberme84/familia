@@ -28,14 +28,3 @@ export const events = [
   { id: 'e15', date: '2026-10-27T09:00:00', title: 'Control de lectura', person: 'vera', category: 'Exámenes', place: 'Colegio · Aula 2B', duration: '45 min' },
   { id: 'e16', date: '2026-11-03T18:00:00', title: 'Entrega trabajo final', person: 'laura', category: 'Máster', place: 'Campus virtual', duration: 'Todo el día' },
 ]
-
-export const lunchMenu = {
-  title: 'Menú del comedor', note: 'Menú ficticio de ejemplo · Semana del 19 al 23 oct.',
-  meals: [
-    { day: 19, first: 'Crema de calabaza', main: 'Tortilla de patata', side: 'Ensalada de temporada', dessert: 'Fruta de temporada' },
-    { day: 20, first: 'Lentejas con verduras', main: 'Merluza al horno', side: 'Arroz blanco', dessert: 'Yogur natural' },
-    { day: 21, first: 'Macarrones con tomate', main: 'Pollo al horno', side: 'Patatas asadas', dessert: 'Manzana' },
-    { day: 22, first: 'Garbanzos guisados', main: 'Albóndigas caseras', side: 'Verduras salteadas', dessert: 'Pera' },
-    { day: 23, first: 'Arroz con verduras', main: 'Pescado del día', side: 'Ensalada verde', dessert: 'Plátano' },
-  ],
-}
