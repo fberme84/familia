@@ -1,0 +1,38 @@
+{
+  "period": {
+    "month": 10,
+    "year": 2026
+  },
+  "days": [
+    { "day": 1, "status": "available", "firstCourse": "Lentejas con boniato", "secondCourse": "Hamburguesa vegetal a la plancha", "saladOrSide": "Ensalada de lechuga", "dessert": "Plátano", "bread": "Pan blanco", "nutrition": { "kcal": 780, "carbohydratesGrams": 106.5, "fatGrams": 27.6, "proteinGrams": 24.8 } },
+    { "day": 2, "status": "available", "firstCourse": "Arroz tres delicias (huevo, guisantes, jamón cocido, zanahoria)", "secondCourse": "Lacón al horno", "saladOrSide": "Ensalada de lechuga, aceitunas y pimiento verde", "dessert": "Pera", "bread": "Pan integral", "nutrition": { "kcal": 670, "carbohydratesGrams": 90.3, "fatGrams": 22.9, "proteinGrams": 27.1 } },
+    { "day": 3, "status": "not_shown_in_source" },
+    { "day": 4, "status": "not_shown_in_source" },
+    { "day": 5, "status": "available", "firstCourse": "Crema de zanahoria ecológica", "secondCourse": "Caballa en aceite", "saladOrSide": "Ensalada de lechuga, maíz y zanahoria", "dessert": "Manzana", "bread": "Pan blanco", "nutrition": { "kcal": 512, "carbohydratesGrams": 60.8, "fatGrams": 16.3, "proteinGrams": 29.8 } },
+    { "day": 6, "status": "available", "firstCourse": "Sopa de cocido", "secondCourse": "Cocido completo", "dessert": "Fruta de temporada", "bread": "Pan integral", "nutrition": { "kcal": 646, "carbohydratesGrams": 78.6, "fatGrams": 23.5, "proteinGrams": 27.6 } },
+    { "day": 7, "status": "available", "firstCourse": "Brócoli rehogado con patatas", "secondCourse": "Contramuslo de pollo a la plancha", "saladOrSide": "Ensalada de lechuga, aceitunas y pimiento verde", "dessert": "Yogur natural", "bread": "Pan blanco", "nutrition": { "kcal": 496, "carbohydratesGrams": 43.3, "fatGrams": 20.2, "proteinGrams": 33.7 } },
+    { "day": 8, "status": "available", "firstCourse": "Arroz integral con verdura", "secondCourse": "Merluza en salsa de tomate y patatas dado", "dessert": "Plátano", "bread": "Pan blanco", "nutrition": { "kcal": 627, "carbohydratesGrams": 98.5, "fatGrams": 15.1, "proteinGrams": 25.7 }, "review": ["Confirmar la expresión «patatas dado» del segundo plato."] },
+    { "day": 9, "status": "available", "firstCourse": "Lentejas con calabaza", "secondCourse": "Tortilla de patata casera", "saladOrSide": "Ensalada de lechuga, aceitunas y maíz", "dessert": "Pera", "bread": "Pan integral", "nutrition": { "kcal": 662, "carbohydratesGrams": 77.0, "fatGrams": 25.4, "proteinGrams": 29.1 } },
+    { "day": 10, "status": "not_shown_in_source" },
+    { "day": 11, "status": "not_shown_in_source" },
+    { "day": 12, "status": "holiday", "label": "Festivo", "menu": null },
+    { "day": 13, "status": "available", "firstCourse": "Puré de puerro", "secondCourse": "Albóndigas en salsa de verduras (zanahoria, pimiento)", "dessert": "Fruta de temporada", "bread": "Pan integral", "nutrition": { "kcal": 532, "carbohydratesGrams": 78.2, "fatGrams": 15.5, "proteinGrams": 16.5 } },
+    { "day": 14, "status": "available", "firstCourse": "Sopa ave con fideo integral", "secondCourse": "Merluza rebozada", "saladOrSide": "Ensalada de lechuga, aceitunas y maíz", "dessert": "Yogur natural", "bread": "Pan blanco", "nutrition": { "kcal": 628, "carbohydratesGrams": 50.9, "fatGrams": 34.8, "proteinGrams": 27.7 } },
+    { "day": 15, "status": "available", "firstCourse": "Patatas guisadas con verduras", "secondCourse": "Pollo al horno con salsa de zanahoria y pimiento", "dessert": "Pera", "bread": "Pan blanco", "nutrition": { "kcal": 448, "carbohydratesGrams": 66.1, "fatGrams": 10.5, "proteinGrams": 21.9 } },
+    { "day": 16, "status": "available", "firstCourse": "Garbanzos con calabaza", "secondCourse": "Huevo revuelto", "saladOrSide": "Ensalada de lechuga", "dessert": "Plátano", "bread": "Pan integral", "nutrition": { "kcal": 671, "carbohydratesGrams": 80.8, "fatGrams": 23.4, "proteinGrams": 32.1 } },
+    { "day": 17, "status": "not_shown_in_source" },
+    { "day": 18, "status": "not_shown_in_source" },
+    { "day": 19, "status": "available", "firstCourse": "Macarrones integrales con tomate", "secondCourse": "Abadejo rebozado", "saladOrSide": "Ensalada de lechuga", "dessert": "Manzana", "bread": "Pan blanco", "nutrition": { "kcal": 725, "carbohydratesGrams": 88.3, "fatGrams": 23.3, "proteinGrams": 38.7 } },
+    { "day": 20, "status": "available", "firstCourse": "Crema de calabacín", "secondCourse": "Magro de cerdo estofado con zanahoria", "dessert": "Fruta de temporada", "bread": "Pan integral", "nutrition": { "kcal": 523, "carbohydratesGrams": 50.5, "fatGrams": 19.8, "proteinGrams": 36.2 } },
+    { "day": 21, "status": "available", "firstCourse": "Judías verdes rehogadas con patatas", "secondCourse": "Lentejas ecológicas de la huerta", "dessert": "Yogur natural", "bread": "Pan blanco", "nutrition": { "kcal": 626, "carbohydratesGrams": 82.5, "fatGrams": 18.5, "proteinGrams": 27.1 } },
+    { "day": 22, "status": "available", "firstCourse": "Paella de verdura (zanahoria, guisante, judía verde)", "secondCourse": "Pollo al horno con salsa de setas", "saladOrSide": "Ensalada de lechuga, aceitunas y maíz", "dessert": "Plátano", "bread": "Pan blanco", "nutrition": { "kcal": 696, "carbohydratesGrams": 106.2, "fatGrams": 20.1, "proteinGrams": 24.9 } },
+    { "day": 23, "status": "available", "firstCourse": "Alubias blancas estofadas", "secondCourse": "Tortilla de patata casera", "saladOrSide": "Ensalada de lechuga, maíz y zanahoria", "dessert": "Manzana", "bread": "Pan integral", "nutrition": { "kcal": 644, "carbohydratesGrams": 77.4, "fatGrams": 22.2, "proteinGrams": 27.9 } },
+    { "day": 24, "status": "not_shown_in_source" },
+    { "day": 25, "status": "not_shown_in_source" },
+    { "day": 26, "status": "available", "firstCourse": "Arroz con tomate", "secondCourse": "Huevos revueltos con champiñones", "saladOrSide": "Ensalada de lechuga, maíz y zanahoria", "dessert": "Manzana", "bread": "Pan blanco", "nutrition": { "kcal": 730, "carbohydratesGrams": 89.5, "fatGrams": 31.9, "proteinGrams": 22.3 } },
+    { "day": 27, "status": "available", "firstCourse": "Alubias pintas a la hortelana", "secondCourse": "Croquetas de bacalao", "saladOrSide": "Ensalada de lechuga, aceitunas y pimiento verde", "dessert": "Fruta de temporada", "bread": "Pan integral", "nutrition": { "kcal": 666, "carbohydratesGrams": 92.0, "fatGrams": 20.8, "proteinGrams": 22.1 } },
+    { "day": 28, "status": "available", "firstCourse": "Puré de verdura ecológico", "secondCourse": "Lacón al horno", "saladOrSide": "Ensalada de lechuga, aceitunas y maíz", "dessert": "Yogur natural", "bread": "Pan blanco", "nutrition": { "kcal": 564, "carbohydratesGrams": 54.6, "fatGrams": 25.9, "proteinGrams": 26.5 } },
+    { "day": 29, "status": "available", "firstCourse": "Sopa de cocido con fideos integrales", "secondCourse": "Cocido completo", "dessert": "Plátano", "bread": "Pan blanco", "nutrition": { "kcal": 722, "carbohydratesGrams": 96.0, "fatGrams": 23.2, "proteinGrams": 29.9 } },
+    { "day": 30, "status": "available", "firstCourse": "Patatas con puerro", "secondCourse": "Palometa con tomate y zanahoria", "dessert": "Pera", "bread": "Pan integral", "nutrition": { "kcal": 549, "carbohydratesGrams": 66.7, "fatGrams": 18.1, "proteinGrams": 29.4 } }
+  ]
+}
