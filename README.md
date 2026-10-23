@@ -1,6 +1,6 @@
 # Nuestra Familia
 
-Panel familiar de demostración creado con React y Vite. Incluye calendario semanal y mensual, filtros por miembro, agenda diaria, menú escolar ficticio y modo marco de fotos. La integración opcional de Google Calendar mantiene los tokens solo en memoria.
+Panel familiar creado con React y Vite. Incluye calendario semanal y mensual, filtros por miembro, men?s escolares, meteorolog?a y modo marco de fotos. Los eventos visibles proceden de los tres feeds iCal; la aplicaci?n no a?ade actividades de demostraci?n.
 
 ## Requisitos
 
@@ -30,10 +30,10 @@ El proyecto está preparado para el repositorio `familia` con la ruta base `/fam
 3. El workflow `.github/workflows/deploy.yml` compilará el proyecto y publicará cada actualización de `main`. También puede iniciarse desde la pestaña **Actions**.
 4. La web estará disponible en `https://<tu-usuario>.github.io/familia/` cuando termine correctamente el workflow.
 
-## Datos de demostración
+## Datos locales
 
-Los eventos, integrantes y menús están en `src/data/family.js`, separados de los componentes visuales. Todos los datos son ficticios. No añadas información familiar personal a este repositorio público.
+Los perfiles y colores de los integrantes est?n en `src/data/family.js`. Los eventos se importan desde `src/data/icalEvents.json`; el men? escolar est? en `src/data/schoolMenu.json`.
 
-## Integración de Google Calendar
+## Fuentes iCal
 
-Consulta [GOOGLE-CALENDAR.md](GOOGLE-CALENDAR.md) para configurar OAuth, probar en local y pasar el ID público al build de GitHub Pages.
+La aplicación combina los calendarios familiar, máster y carreras mediante el generador iCal. Para la configuración local y la validación, consulta [docs/ICAL-TESTS.md](docs/ICAL-TESTS.md).
